@@ -1,0 +1,71 @@
+THE LINK BOWL
+=======================
+
+AUTHOR: Rashid Khan (http://code.google.com/u/rashidkpc)
+DATE: April 18th 2011
+LICENSE: GPL v3
+
+1. Introduction
+2. Requirements
+3. Installtion
+4. Configuration
+5. Disclaimer & License
+
+1. INTRODUCTION
+
+The Link Bowl is an open source clone of a popular online url shortening
+tool. Instead of trying make a URL as short as possible it aims to make
+the url as memorable as possible. It does this by combining an adjective
+or verb with a noun. Included are two lists capable of generating over 58
+million unique memorable urls. The lists were compiled using 30000 of the
+most common english words.  
+
+2. REQUIREMENTS
+
+You'll need PHP, Apache and Sqlite2 with its associated PHP module. 
+
+3. INSTALLATION
+
+ 3.1 Copy to your web server and untar.
+ 3.2 Its best to give the service its own vhost, to make the urls short.
+ 3.3 Ensure Override All is in the vhost definition
+ 3.4 Edit the rewrite rules in .htaccess to match your domain
+ 3.5 Chown the ./database directory to the webserver user
+ 3.6 Point browser at http://yousite.domain/setup.php
+ 3.7 See config.php to set additional options 
+
+4. CONFIGURATION
+
+ 4.1 Word lists
+	Word lists are configurable in config.php. Each list MUST MUST MUST
+	be PRIME in length. If they are not, your number of possible URLs
+	will be much much smaller. Not all words will get used and phrases
+	will be reused much faster. So yeah, make the list prime, or leave
+	the existing lists. If you need to remove a few words, make sure
+	you remove enough to make the list lengths prime again.
+ 4.2 URL List
+	You can secure the url_list.php page by setting a username and 
+	password. See the details and notes in config.php. You can also 
+	enable or disable the front page link to the url_list.php page.
+	In addition the number of urls shown per page is configurable
+ 4.3 Misc
+	The following other items are configuable: Title, logo and the
+	disclaimer message shown at the bottom of the shortened url page
+	You can use delete.php to clear the database if needed. Note that
+	any existing shortened urls will be lost if you do this.
+	
+5. DISCLAIMER & LICENSE
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
